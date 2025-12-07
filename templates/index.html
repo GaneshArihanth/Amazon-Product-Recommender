@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product AI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Highlight.js for code blocks (optional but good for tech responses) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Items Recommender</h1>
+            <button class="simulate-btn" onclick="simulatePurchase()" title="Simulate a new purchase">
+                Simulate Purchase
+            </button>
+            <button class="reset-btn" onclick="resetChat()" title="Reset Conversation">
+                Clear Chat
+            </button>
+        </header>
+
+        <div id="chat-box">
+            <div class="message ai">
+                Hello! I'm your Personal Shopping Assistant. What are you looking for today?
+            </div>
+        </div>
+
+        <div class="typing" id="typing-indicator">AI is thinking...</div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Describe the product you need..." autocomplete="off"
+                onkeypress="handleKeyPress(event)">
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+        const typingIndicator = document.getElementById('typing-indicator');
+
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) return;
+
+            // Add User Message
+            appendMessage(text, 'user');
+            userInput.value = '';
+
+            // Show Typing Indicator
+            typingIndicator.style.display = 'block';
+            scrollToBottom();
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ 'user_input': text })
+                });
+
+                const data = await response.json();
+                typingIndicator.style.display = 'none';
+
+                if (data.error) {
+                    appendMessage("Error: " + data.error, 'ai');
+                } else {
+                    appendMessage(data.response, 'ai');
+                }
+            } catch (error) {
+                typingIndicator.style.display = 'none';
+                appendMessage("Network error. Please try again.", 'ai');
+            }
+        }
+
+        async function resetChat() {
+            if (!confirm("Are you sure you want to clear the conversation history?")) return;
+
+            try {
+                const response = await fetch('/reset', { method: 'POST' });
+                const data = await response.json();
+
+                chatBox.innerHTML = '<div class="message ai">Memory cleared. How can I help you gently?</div>';
+            } catch (e) {
+                alert("Failed to reset chat.");
+            }
+        }
+
+        function appendMessage(text, role) {
+            const div = document.createElement('div');
+            div.classList.add('message', role);
+
+            // Simple markdown parsing for bold text
+            let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            formattedText = formattedText.replace(/\n/g, '<br>');
+
+            div.innerHTML = formattedText;
+
+            // Add Feedback UI for AI messages
+            if (role === 'ai') {
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.className = 'feedback-controls';
+                feedbackDiv.innerHTML = `
+                    <button class="feedback-btn" onclick="submitFeedback(this, true)">👍 Like</button>
+                    <button class="feedback-btn" onclick="submitFeedback(this, false)">👎 Dislike</button>
+                `;
+                div.appendChild(feedbackDiv);
+            }
+
+            chatBox.appendChild(div);
+            scrollToBottom();
+        }
+
+        async function simulatePurchase() {
+            const product = prompt("Enter product name to simulate purchase (e.g. 'Wireless Mouse'):", "Gaming Mouse");
+            if (!product) return;
+
+            try {
+                const response = await fetch('/simulate_purchase', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({
+                        'product': product,
+                        'category': 'Electronics'
+                    })
+                });
+                const data = await response.json();
+                alert(data.message || data.error);
+            } catch (e) {
+                alert("Simulation failed");
+            }
+        }
+
+        async function submitFeedback(btn, liked) {
+            // Find the product name roughly from the message text
+            // In a real app, the backend should send structured data. 
+            // Here we just grab the last mentioned product or generic context.
+            // For simplicity, we ask the user to confirm "What did you like?" or we just say "this recommendation".
+            // Let's just prompt for now to be precise for the "Game".
+
+            const product = prompt("Confirm product name for feedback:", "Current Recommendation");
+            if (!product) return;
+
+            try {
+                const response = await fetch('/train', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({
+                        'product': product,
+                        'liked': liked
+                    })
+                });
+                const data = await response.json();
+
+                // Visual feedback
+                btn.style.backgroundColor = liked ? '#10b981' : '#ef4444';
+                btn.style.color = 'white';
+
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    </script>
+</body>
+
+</html>

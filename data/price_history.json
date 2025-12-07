@@ -1,0 +1,28 @@
+{
+  "tracked_items": {
+    "flipkart://demo/logitech-m221": {
+      "title": "Logitech M221 Wireless Mouse",
+      "url": "flipkart://demo/logitech-m221",
+      "currency": "INR",
+      "source": "Flipkart",
+      "history": [
+        {
+          "date": "2025-12-07",
+          "price": 749.0
+        }
+      ]
+    },
+    "flipkart://demo/dell-ms116": {
+      "title": "Dell MS116 Wired Optical Mouse",
+      "url": "flipkart://demo/dell-ms116",
+      "currency": "INR",
+      "source": "Flipkart",
+      "history": [
+        {
+          "date": "2025-12-07",
+          "price": 349.0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+flask
+sentence-transformers
+chromadb
+langchain-ollama
+pdfplumber
+langchain-core

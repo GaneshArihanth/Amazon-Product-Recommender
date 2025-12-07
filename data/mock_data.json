@@ -1,0 +1,46 @@
+{
+  "users": {
+    "current_user": {
+      "name": "Anish",
+      "purchase_history": [
+        {
+          "product_name": "Sony WH-1000XM5 Noise Cancelling Headphones",
+          "category": "Electronics",
+          "price": 348.0,
+          "purchase_date": "2024-03-15"
+        },
+        {
+          "product_name": "Kindle Paperwhite (16 GB)",
+          "category": "Electronics",
+          "price": 149.99,
+          "purchase_date": "2024-04-10"
+        },
+        {
+          "product_name": "Gaming Mouse",
+          "category": "Electronics",
+          "price": 0.0,
+          "purchase_date": "2025-12-06"
+        }
+      ],
+      "wishlist": [
+        {
+          "product_name": "Keychron Q1 Pro Mechanical Keyboard",
+          "category": "Electronics",
+          "added_date": "2024-05-01"
+        }
+      ],
+      "preferences": [
+        "Likes tech gadgets",
+        "Prefers premium quality over budget",
+        "Interested in productivity tools"
+      ],
+      "budget_range": "Medium ($50 - $200)",
+      "purpose": "General Use",
+      "liked_brands": [
+        "Current Recommendation"
+      ],
+      "disliked_brands": [],
+      "browsing_history": []
+    }
+  }
+}
