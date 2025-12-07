@@ -98,10 +98,27 @@ class DatabaseManager:
     Manages interactions with ChromaDB (Caching Logic).
     """
     def __init__(self, persist_path=None):
-        if persist_path is None:
-            persist_path = os.path.join(os.getcwd(), 'chroma_db')
-        
-        self.client = chromadb.PersistentClient(path=persist_path)
+        # Decide between local persistent client (dev) and Chroma Cloud REST (Vercel)
+        mode = os.getenv("CHROMA_MODE", "local").lower()
+
+        if mode == "cloud":
+            # Chroma Cloud / REST configuration
+            host = os.getenv("CHROMA_SERVER_HOST", "api.trychroma.com")
+            port = int(os.getenv("CHROMA_SERVER_HTTP_PORT", "443"))
+
+            settings = Settings(
+                chroma_api_impl="rest",
+                chroma_server_host=host,
+                chroma_server_http_port=port,
+                chroma_server_ssl_enabled=True,
+            )
+            self.client = chromadb.Client(settings)
+        else:
+            # Local persistent client (default for dev / running on your laptop)
+            if persist_path is None:
+                persist_path = os.path.join(os.getcwd(), 'chroma_db')
+            self.client = chromadb.PersistentClient(path=persist_path)
+
         self.user_history_collection_name = "user_interaction_history"
         self.product_cache_collection_name = "product_cache"
 
