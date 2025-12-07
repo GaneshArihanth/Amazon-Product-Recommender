@@ -1,6 +1,21 @@
 flask
+
+# Core ML / embeddings
 sentence-transformers
-chromadb
+
+# LLM integration (Ollama + LangChain core types)
 langchain-ollama
-pdfplumber
 langchain-core
+
+# Scraping / HTTP
+requests
+beautifulsoup4
+lxml
+aiohttp
+
+# Selenium-based scrapers
+selenium
+webdriver-manager
+
+# PDF utility (from original project)
+pdfplumber
