@@ -3,7 +3,7 @@ services:
     name: amazon-product-recommender
     env: python
     plan: free
-    region: oregon
+    regio n: oregon
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers=2 --threads=8 --timeout=120
     envVars:

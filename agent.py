@@ -35,7 +35,7 @@ class ShoppingAgent:
                     "- recommend items\n"
                     "Speak friendly and clearly."
                 )
-                self.model = genai.GenerativeModel("gemini-1.5-flash")
+                self.model = genai.GenerativeModel("models/gemini-2.0-flash")
                 self.chat_session = self.model.start_chat(history=[])
                 # Seed chat with system instruction
                 self.chat_session.send_message(self.system_instruction)
