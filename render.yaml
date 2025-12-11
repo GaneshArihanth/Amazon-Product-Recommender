@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: amazon-product-recommender
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers=2 --threads=8 --timeout=120
+    envVars:
+      - key: DEBUG
+        value: "false"
+      - key: STORAGE_PATH
+        value: /opt/render/project/src/storage
+      # Set this in the Render dashboard as a Secret
+      - key: GOOGLE_API_KEY
+        sync: false
+    disk:
+      name: storage
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1

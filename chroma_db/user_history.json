@@ -1,0 +1,16 @@
+[
+  {
+    "id": "current_user:38ebf83a085d44059a50fd5d12aae247",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "search for mouse gaming and tell",
+    "ts": "2025-12-11T05:20:00.773417"
+  },
+  {
+    "id": "current_user:a317ddb26373499bbb2608f2a0bf0a6a",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "[AUTO RESPONSE - LLM unavailable]\nBased on your profile and live market data:\n\nUSER PROFILE:\nUser: Anish\n- Budget: Medium ($50 - $200)\n- Purpose: General Use\n- Loves: Current Recommendation\n- Recent Buys:\n  * Sony WH-1000XM5 Noise Cancelling Headphones (348.0)\n  * Kindle Paperwhite (16 GB) (149.99)\n  * Gaming Mouse (0.0)\n\n\nMARKET DATA:\nLIVE MARKET DATA:\n- [eBay] Logitech M510 Wireless Mouse - 24.99 USD\n  (\u2705 Good Deal vs peers (low percentile)) [Link: https://www.ebay.com/itm/demo-logitech-m510]\n- [eBay] Razer DeathAdder Essential Gaming Mouse - 29.99 USD\n  (\u27a1\ufe0f Fair Price vs peers) [Link: https://www.ebay.com/itm/demo-razer-deathadder]\n- [Flipkart] Dell MS116 Wired Optical Mouse - 349.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: flipkart://demo/dell-ms116]\n- [Amazon] HP X1000 Wired Mouse - 399.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: amazon://demo/hp-x1000]\n- [Flipkart] Logitech M221 Wireless Mouse - 749.0 INR\n  (\u23f3 High Price vs peers (consider waiting)) [Link: flipkart://demo/logitech-m221]\n",
+    "ts": "2025-12-11T05:20:00.788645"
+  }
+]

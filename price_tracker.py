@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 class PriceTracker:
     def __init__(self, data_file_path=None, external_provider=None):
         if data_file_path is None:
-            self.data_file_path = os.path.join(os.getcwd(), 'data', 'price_history.json')
+            base = os.getenv("STORAGE_PATH") or os.path.join(os.getcwd(), 'data')
+            self.data_file_path = os.path.join(base, 'price_history.json')
         else:
             self.data_file_path = data_file_path
             

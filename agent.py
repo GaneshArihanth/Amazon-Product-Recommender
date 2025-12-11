@@ -1,9 +1,8 @@
 import logging
 import json
 import asyncio
-from langchain_ollama import OllamaLLM
-from langchain_core.prompts import ChatPromptTemplate
-from sentence_transformers import SentenceTransformer
+import os
+import google.generativeai as genai
 from tools import MockAmazonConnector, DatabaseManager
 from price_tracker import PriceTracker
 
@@ -21,8 +20,30 @@ class ShoppingAgent:
         self.price_tracker = PriceTracker()
         
         logger.info("Agent: Initializing Models...")
-        self.embed_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
-        self.llm = OllamaLLM(model="mistral",device='cuda')
+        # Initialize Google Gemini
+        self.gemini_ready = False
+        api_key = os.getenv("GOOGLE_API_KEY")
+        try:
+            if api_key:
+                genai.configure(api_key=api_key)
+                # System instruction to steer assistant behavior
+                self.system_instruction = (
+                    "You are a helpful grocery shopping assistant.\n"
+                    "You help users:\n"
+                    "- find products\n"
+                    "- manage grocery cart\n"
+                    "- recommend items\n"
+                    "Speak friendly and clearly."
+                )
+                self.model = genai.GenerativeModel("gemini-1.5-flash")
+                self.chat_session = self.model.start_chat(history=[])
+                # Seed chat with system instruction
+                self.chat_session.send_message(self.system_instruction)
+                self.gemini_ready = True
+            else:
+                logger.warning("GOOGLE_API_KEY not set. Gemini will be unavailable; using fallback responses.")
+        except Exception as e:
+            logger.error(f"Failed to initialize Gemini: {e}")
         
         self.scrapers = {
             "Amazon": AmazonScraper(),
@@ -192,16 +213,18 @@ class ShoppingAgent:
         Response:
         """
         
-        prompt = ChatPromptTemplate.from_template(template_str)
-        chain = prompt | self.llm
-        
         try:
-            response = chain.invoke({
-                "user_profile": profile_context,
-                "market_data": online_context,
-                "history": history_context,
-                "input": user_input
-            })
+            if not self.gemini_ready:
+                raise RuntimeError("Gemini not configured")
+
+            formatted = template_str.format(
+                user_profile=profile_context,
+                market_data=online_context,
+                history=history_context,
+                input=user_input,
+            )
+            gemini_resp = self.chat_session.send_message(formatted)
+            response = getattr(gemini_resp, "text", None) or str(gemini_resp)
             # Log interaction to conversation memory
             try:
                 self.db_manager.log_interaction("current_user", "user", user_input)

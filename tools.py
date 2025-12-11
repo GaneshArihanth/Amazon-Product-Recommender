@@ -1,8 +1,6 @@
 import os
 import json
 import logging
-import chromadb
-from chromadb.config import Settings
 import datetime
 import uuid
 
@@ -95,46 +93,56 @@ class MockAmazonConnector:
 
 class DatabaseManager:
     """
-    Manages interactions with ChromaDB (Caching Logic).
+    Manages local JSON-backed caches and interaction history.
     """
     def __init__(self, persist_path=None):
-        # Decide between local persistent client (dev) and Chroma Cloud REST (Vercel)
-        mode = os.getenv("CHROMA_MODE", "local").lower()
+        base_path = os.getenv("STORAGE_PATH") or persist_path or os.path.join(os.getcwd(), 'chroma_db')
+        os.makedirs(base_path, exist_ok=True)
+        self.base_path = base_path
+        self.cache_file = os.path.join(self.base_path, 'product_cache.json')
+        self.history_file = os.path.join(self.base_path, 'user_history.json')
+        if not os.path.exists(self.cache_file):
+            with open(self.cache_file, 'w') as f:
+                json.dump({}, f)
+        if not os.path.exists(self.history_file):
+            with open(self.history_file, 'w') as f:
+                json.dump([], f)
 
-        if mode == "cloud":
-            # Chroma Cloud / REST configuration
-            host = os.getenv("CHROMA_SERVER_HOST", "api.trychroma.com")
-            port = int(os.getenv("CHROMA_SERVER_HTTP_PORT", "443"))
-
-            settings = Settings(
-                chroma_api_impl="rest",
-                chroma_server_host=host,
-                chroma_server_http_port=port,
-                chroma_server_ssl_enabled=True,
-            )
-            self.client = chromadb.Client(settings)
-        else:
-            # Local persistent client (default for dev / running on your laptop)
-            if persist_path is None:
-                persist_path = os.path.join(os.getcwd(), 'chroma_db')
-            self.client = chromadb.PersistentClient(path=persist_path)
-
-        self.user_history_collection_name = "user_interaction_history"
-        self.product_cache_collection_name = "product_cache"
-
-    def get_or_create_collection(self, name):
+    def _read_cache(self):
         try:
-            return self.client.get_collection(name)
-        except:
-            return self.client.create_collection(name)
+            with open(self.cache_file, 'r') as f:
+                return json.load(f)
+        except Exception:
+            return {}
+
+    def _write_cache(self, data):
+        try:
+            with open(self.cache_file, 'w') as f:
+                json.dump(data, f, indent=2)
+        except Exception as e:
+            logger.error(f"Cache write error: {e}")
+
+    def _read_history(self):
+        try:
+            with open(self.history_file, 'r') as f:
+                return json.load(f)
+        except Exception:
+            return []
+
+    def _write_history(self, data):
+        try:
+            with open(self.history_file, 'w') as f:
+                json.dump(data, f, indent=2)
+        except Exception as e:
+            logger.error(f"History write error: {e}")
 
     def get_cached_results(self, query):
         try:
-            collection = self.get_or_create_collection(self.product_cache_collection_name)
+            all_cache = self._read_cache()
             query_id = query.lower().replace(" ", "_")
-            results = collection.get(ids=[query_id])
-            if results['documents']:
-                return json.loads(results['documents'][0])
+            entry = all_cache.get(query_id)
+            if entry and isinstance(entry.get('documents'), list):
+                return entry['documents']
             return None
         except Exception as e:
             logger.error(f"Cache retrieval error: {e}")
@@ -142,52 +150,38 @@ class DatabaseManager:
 
     def cache_results(self, query, products):
         try:
-            collection = self.get_or_create_collection(self.product_cache_collection_name)
+            all_cache = self._read_cache()
             query_id = query.lower().replace(" ", "_")
             timestamp = datetime.datetime.now().isoformat()
-            doc_content = json.dumps(products)
-            collection.upsert(
-                ids=[query_id],
-                documents=[doc_content],
-                metadatas=[{"timestamp": timestamp, "query": query}]
-            )
+            all_cache[query_id] = {
+                "documents": products,
+                "metadata": {"timestamp": timestamp, "query": query}
+            }
+            self._write_cache(all_cache)
             logger.info(f"Cached {len(products)} items for '{query}'")
         except Exception as e:
             logger.error(f"Cache storage error: {e}")
 
-    # --- Conversation Memory (User Interaction History) ---
     def log_interaction(self, user_id: str, role: str, text: str, ts: str | None = None):
         try:
-            collection = self.get_or_create_collection(self.user_history_collection_name)
-            event_id = f"{user_id}:{uuid.uuid4().hex}"
+            history = self._read_history()
             if ts is None:
                 ts = datetime.datetime.utcnow().isoformat()
-            document = json.dumps({
+            history.append({
+                "id": f"{user_id}:{uuid.uuid4().hex}",
                 "user_id": user_id,
                 "role": role,
                 "text": text,
                 "ts": ts,
             })
-            collection.add(
-                ids=[event_id],
-                documents=[document],
-                metadatas=[{"user_id": user_id, "role": role, "ts": ts}]
-            )
+            self._write_history(history)
         except Exception as e:
             logger.error(f"Interaction log error: {e}")
 
     def get_recent_interactions(self, user_id: str, limit: int = 10):
         try:
-            collection = self.get_or_create_collection(self.user_history_collection_name)
-            data = collection.get(where={"user_id": user_id})
-            docs = data.get("documents", []) or []
-            entries = []
-            for d in docs:
-                try:
-                    entries.append(json.loads(d))
-                except Exception:
-                    continue
-            # Sort by timestamp descending and return the last N
+            history = self._read_history()
+            entries = [h for h in history if h.get("user_id") == user_id]
             entries.sort(key=lambda x: x.get("ts", ""), reverse=True)
             return entries[:limit]
         except Exception as e:

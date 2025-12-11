@@ -5,5 +5,5 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # App Configuration
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 SECRET_KEY = os.getenv("SECRET_KEY", "default-secret-key")

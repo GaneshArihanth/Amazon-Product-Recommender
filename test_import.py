@@ -1,9 +1,7 @@
 import traceback
 try:
-    print("Importing SentenceTransformer...")
-    from sentence_transformers import SentenceTransformer
-    print("Model init...")
-    model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
-    print("Success")
+    print("Importing google.generativeai...")
+    import google.generativeai as genai
+    print("Success: google-generativeai available")
 except Exception:
     traceback.print_exc()

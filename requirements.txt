@@ -1,21 +1,14 @@
 flask
+gunicorn
 
-# Core ML / embeddings
-sentence-transformers
+# Google Gemini
+google-generativeai
 
-# LLM integration (Ollama + LangChain core types)
-langchain-ollama
-langchain-core
+# Env
+python-dotenv
 
 # Scraping / HTTP
 requests
 beautifulsoup4
 lxml
 aiohttp
-
-# Selenium-based scrapers
-selenium
-webdriver-manager
-
-# PDF utility (from original project)
-pdfplumber

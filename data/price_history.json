@@ -9,6 +9,10 @@
         {
           "date": "2025-12-07",
           "price": 749.0
+        },
+        {
+          "date": "2025-12-11",
+          "price": 749.0
         }
       ]
     },
@@ -21,6 +25,58 @@
         {
           "date": "2025-12-07",
           "price": 349.0
+        },
+        {
+          "date": "2025-12-11",
+          "price": 349.0
+        }
+      ]
+    },
+    "amazon://demo/logitech-m185": {
+      "title": "Logitech M185 Wireless Mouse",
+      "url": "amazon://demo/logitech-m185",
+      "currency": "INR",
+      "source": "Amazon",
+      "history": [
+        {
+          "date": "2025-12-11",
+          "price": 799.0
+        }
+      ]
+    },
+    "amazon://demo/hp-x1000": {
+      "title": "HP X1000 Wired Mouse",
+      "url": "amazon://demo/hp-x1000",
+      "currency": "INR",
+      "source": "Amazon",
+      "history": [
+        {
+          "date": "2025-12-11",
+          "price": 399.0
+        }
+      ]
+    },
+    "https://www.ebay.com/itm/demo-logitech-m510": {
+      "title": "Logitech M510 Wireless Mouse",
+      "url": "https://www.ebay.com/itm/demo-logitech-m510",
+      "currency": "USD",
+      "source": "eBay",
+      "history": [
+        {
+          "date": "2025-12-11",
+          "price": 24.99
+        }
+      ]
+    },
+    "https://www.ebay.com/itm/demo-razer-deathadder": {
+      "title": "Razer DeathAdder Essential Gaming Mouse",
+      "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+      "currency": "USD",
+      "source": "eBay",
+      "history": [
+        {
+          "date": "2025-12-11",
+          "price": 29.99
         }
       ]
     }
