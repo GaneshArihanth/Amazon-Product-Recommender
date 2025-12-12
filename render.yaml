@@ -3,8 +3,8 @@ services:
     name: amazon-product-recommender
     env: python
     plan: free
-    regio n: oregon
-    buildCommand: pip install -r requirements.txt
+    region: oregon
+    buildCommand: pip install -r requirements.txt && pip install google-genai
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers=2 --threads=8 --timeout=120
     envVars:
       - key: DEBUG
