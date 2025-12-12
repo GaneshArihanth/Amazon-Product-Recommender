@@ -138,5 +138,19 @@
     "role": "assistant",
     "text": "The market data does not currently show any high-performance gaming laptops near 60,000 INR. However, based on availability, here are the best laptop options currently priced well under your limit:\n\n*   **Lenovo ThinkPad T480 (Refurbished):** This is the top value option. It is available for $279.99 on eBay and is marked as a strong **Good Deal** vs. peers.\n*   **Acer Aspire 3 Ryzen 5:** This machine offers the best performance among new low-to-mid-range options (Ryzen 5/8GB/512GB SSD). It is available at a **Fair Price** of 35,990.0 INR on Flipkart.\n*   **HP 14s 11th Gen i3:** A solid new general-purpose choice at a **Fair Price**. Get the 8GB/512GB SSD configuration for 32,990.0 INR on Flipkart.\n\n**Price Trend Alert:** Avoid the ASUS VivoBook 15 right now; it is currently selling at a **High Price** compared to similar competitors (38,990.0 INR).",
     "ts": "2025-12-12T09:35:15.370925"
+  },
+  {
+    "id": "current_user:fae1f41d845f4e9c974e213afab3f7e9",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "explain about products",
+    "ts": "2025-12-12T12:57:49.252464"
+  },
+  {
+    "id": "current_user:4dd34649f5614dc8be236a80ab2fc1fa",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "Based on the laptops previously recommended, here are the details:\n\n*   **Lenovo ThinkPad T480 (Refurbished):** This is a durable, high-end business machine known for robust build quality and excellent keyboards. It is currently a **Good Deal** at $279.99, offering high value for a refurbished unit.\n*   **Acer Aspire 3 Ryzen 5:** This is a strong new option featuring a Ryzen 5 processor, 8GB RAM, and 512GB SSD for reliable general performance. It is available at 35,990.0 INR on Flipkart at a **Fair Price** for the specs.\n*   **HP 14s 11th Gen i3:** A practical, new utility laptop suitable for everyday tasks, featuring a modern 11th Gen i3 chip. It is listed at a **Fair Price** of 32,990.0 INR on Flipkart.\n\n*(Reminder: The ASUS VivoBook 15 is currently selling at a High Price (38,990.0 INR), so consider waiting on that model.)*",
+    "ts": "2025-12-12T12:57:49.269657"
   }
 ]

@@ -24,7 +24,7 @@ class ShoppingAgent:
         logger.info("Agent: Initializing Models...")
         # Initialize Google Gemini
         self.gemini_ready = False
-        api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+        api_key = os.getenv("GEMINI_API_KEY")
         try:
             if api_key:
                 self.genai_client = genai.Client(
