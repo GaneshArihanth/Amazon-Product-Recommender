@@ -13,6 +13,10 @@
         {
           "date": "2025-12-11",
           "price": 749.0
+        },
+        {
+          "date": "2025-12-12",
+          "price": 749.0
         }
       ]
     },
@@ -29,6 +33,10 @@
         {
           "date": "2025-12-11",
           "price": 349.0
+        },
+        {
+          "date": "2025-12-12",
+          "price": 349.0
         }
       ]
     },
@@ -40,6 +48,10 @@
       "history": [
         {
           "date": "2025-12-11",
+          "price": 799.0
+        },
+        {
+          "date": "2025-12-12",
           "price": 799.0
         }
       ]
@@ -53,6 +65,10 @@
         {
           "date": "2025-12-11",
           "price": 399.0
+        },
+        {
+          "date": "2025-12-12",
+          "price": 399.0
         }
       ]
     },
@@ -64,6 +80,10 @@
       "history": [
         {
           "date": "2025-12-11",
+          "price": 24.99
+        },
+        {
+          "date": "2025-12-12",
           "price": 24.99
         }
       ]
@@ -77,6 +97,94 @@
         {
           "date": "2025-12-11",
           "price": 29.99
+        },
+        {
+          "date": "2025-12-12",
+          "price": 29.99
+        }
+      ]
+    },
+    "amazon://demo/hp-15s-i5": {
+      "title": "HP 15s 12th Gen i5 Laptop (16GB/512GB SSD)",
+      "url": "amazon://demo/hp-15s-i5",
+      "currency": "INR",
+      "source": "Amazon",
+      "history": [
+        {
+          "date": "2025-12-12",
+          "price": 52990.0
+        }
+      ]
+    },
+    "amazon://demo/lenovo-ideapad-slim-3": {
+      "title": "Lenovo IdeaPad Slim 3 Ryzen 5 5500U (8GB/512GB)",
+      "url": "amazon://demo/lenovo-ideapad-slim-3",
+      "currency": "INR",
+      "source": "Amazon",
+      "history": [
+        {
+          "date": "2025-12-12",
+          "price": 42990.0
+        }
+      ]
+    },
+    "amazon://demo/asus-vivobook-15": {
+      "title": "ASUS VivoBook 15 i3 12th Gen (8GB/512GB)",
+      "url": "amazon://demo/asus-vivobook-15",
+      "currency": "INR",
+      "source": "Amazon",
+      "history": [
+        {
+          "date": "2025-12-12",
+          "price": 38990.0
+        }
+      ]
+    },
+    "flipkart://demo/acer-aspire-3-r5": {
+      "title": "Acer Aspire 3 Ryzen 5 (8GB/512GB SSD)",
+      "url": "flipkart://demo/acer-aspire-3-r5",
+      "currency": "INR",
+      "source": "Flipkart",
+      "history": [
+        {
+          "date": "2025-12-12",
+          "price": 35990.0
+        }
+      ]
+    },
+    "flipkart://demo/hp-14s-i3": {
+      "title": "HP 14s 11th Gen i3 (8GB/512GB SSD)",
+      "url": "flipkart://demo/hp-14s-i3",
+      "currency": "INR",
+      "source": "Flipkart",
+      "history": [
+        {
+          "date": "2025-12-12",
+          "price": 32990.0
+        }
+      ]
+    },
+    "https://www.ebay.com/itm/demo-refurb-thinkpad-t480": {
+      "title": "Lenovo ThinkPad T480 (Refurbished)",
+      "url": "https://www.ebay.com/itm/demo-refurb-thinkpad-t480",
+      "currency": "USD",
+      "source": "eBay",
+      "history": [
+        {
+          "date": "2025-12-12",
+          "price": 279.99
+        }
+      ]
+    },
+    "https://www.ebay.com/itm/demo-used-latitude-7490": {
+      "title": "Dell Latitude 7490 (Used)",
+      "url": "https://www.ebay.com/itm/demo-used-latitude-7490",
+      "currency": "USD",
+      "source": "eBay",
+      "history": [
+        {
+          "date": "2025-12-12",
+          "price": 329.99
         }
       ]
     }

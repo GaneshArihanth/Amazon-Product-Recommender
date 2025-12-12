@@ -2,6 +2,7 @@ import asyncio
 from typing import List, Dict, Any
 
 from bs4 import BeautifulSoup
+import urllib.parse
 
 from .base import AsyncECommerceScraper, Product
 
@@ -9,7 +10,8 @@ from .base import AsyncECommerceScraper, Product
 class EbayScraper(AsyncECommerceScraper):
     async def search(self, query: str) -> List[Dict[str, Any]]:
         """HTTP-based eBay search parsing (no Selenium)."""
-        url = f"https://www.ebay.com/sch/i.html?_nkw={query.replace(' ', '+')}"
+        search_q = "laptop" if ("laptop" in (query or "").lower() or "notebook" in (query or "").lower()) else (query or "").strip()
+        url = f"https://www.ebay.com/sch/i.html?_nkw={urllib.parse.quote_plus(search_q)}"
         items: List[Dict[str, Any]] = []
 
         try:
@@ -43,22 +45,41 @@ class EbayScraper(AsyncECommerceScraper):
             items = []
 
         if not items:
-            items = [
-                {
-                    "title": "Logitech M510 Wireless Mouse",
-                    "price": 24.99,
-                    "currency": "USD",
-                    "source": "eBay",
-                    "url": "https://www.ebay.com/itm/demo-logitech-m510",
-                },
-                {
-                    "title": "Razer DeathAdder Essential Gaming Mouse",
-                    "price": 29.99,
-                    "currency": "USD",
-                    "source": "eBay",
-                    "url": "https://www.ebay.com/itm/demo-razer-deathadder",
-                },
-            ]
+            ql = (query or "").lower()
+            if "laptop" in ql or "notebook" in ql:
+                items = [
+                    {
+                        "title": "Lenovo ThinkPad T480 (Refurbished)",
+                        "price": 279.99,
+                        "currency": "USD",
+                        "source": "eBay",
+                        "url": "https://www.ebay.com/itm/demo-refurb-thinkpad-t480",
+                    },
+                    {
+                        "title": "Dell Latitude 7490 (Used)",
+                        "price": 329.99,
+                        "currency": "USD",
+                        "source": "eBay",
+                        "url": "https://www.ebay.com/itm/demo-used-latitude-7490",
+                    },
+                ]
+            else:
+                items = [
+                    {
+                        "title": "Logitech M510 Wireless Mouse",
+                        "price": 24.99,
+                        "currency": "USD",
+                        "source": "eBay",
+                        "url": "https://www.ebay.com/itm/demo-logitech-m510",
+                    },
+                    {
+                        "title": "Razer DeathAdder Essential Gaming Mouse",
+                        "price": 29.99,
+                        "currency": "USD",
+                        "source": "eBay",
+                        "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+                    },
+                ]
 
         products: List[Dict[str, Any]] = []
         for item in items:

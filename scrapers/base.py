@@ -3,6 +3,7 @@ import aiohttp
 import asyncio
 import random
 import logging
+import os
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
@@ -36,19 +37,38 @@ class BaseScraper:
 
         Returns a BeautifulSoup instance on success, otherwise None.
         """
-        headers = random.choice(FULL_HEADERS)
+        headers = random.choice(FULL_HEADERS).copy()
+        # Add a referer to look more like a browser flow
+        headers.setdefault("Referer", "https://www.google.com/")
+
+        # Configurable jitter and concurrency
+        try:
+            delay_min = float(os.getenv("SCRAPER_DELAY_MIN", "0.8"))
+            delay_max = float(os.getenv("SCRAPER_DELAY_MAX", "2.0"))
+            limit_per_host = int(os.getenv("SCRAPER_LIMIT_PER_HOST", "2"))
+        except Exception:
+            delay_min, delay_max, limit_per_host = 0.8, 2.0, 2
+
+        proxy = os.getenv("HTTP_PROXY") or os.getenv("HTTPS_PROXY")
 
         for attempt in range(3):
             try:
-                timeout = aiohttp.ClientTimeout(total=12)
-                async with aiohttp.ClientSession(timeout=timeout) as session:
-                    async with session.get(url, headers=headers) as resp:
+                # Jitter between attempts to reduce 503s
+                await asyncio.sleep(random.uniform(delay_min, delay_max))
+
+                timeout = aiohttp.ClientTimeout(total=15)
+                connector = aiohttp.TCPConnector(limit_per_host=limit_per_host)
+                async with aiohttp.ClientSession(timeout=timeout, connector=connector) as session:
+                    async with session.get(url, headers=headers, proxy=proxy) as resp:
 
                         if resp.status == 200:
                             text = await resp.text()
                             return BeautifulSoup(text, "html.parser")
 
                         logger.warning(f"Status {resp.status} for {url}")
+                        # Backoff more on 429/503
+                        if resp.status in (429, 503):
+                            await asyncio.sleep((attempt + 1) * 2 + random.uniform(0, 1))
 
             except Exception as e:
                 logger.error(f"Fetch error attempt {attempt+1}: {e}")

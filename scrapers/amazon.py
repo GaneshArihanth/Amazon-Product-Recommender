@@ -1,6 +1,7 @@
 import asyncio
 from typing import List, Dict, Any
 
+import urllib.parse
 from bs4 import BeautifulSoup
 
 from .base import AsyncECommerceScraper, Product
@@ -12,7 +13,8 @@ class AmazonScraper(AsyncECommerceScraper):
 
         If parsing fails (Amazon may block or obfuscate), return stable demo items.
         """
-        url = f"https://www.amazon.in/s?k={query.replace(' ', '+')}"
+        search_q = "laptop" if ("laptop" in (query or "").lower() or "notebook" in (query or "").lower()) else (query or "").strip()
+        url = f"https://www.amazon.in/s?k={urllib.parse.quote_plus(search_q)}"
         items: List[Dict[str, Any]] = []
 
         try:
@@ -47,22 +49,48 @@ class AmazonScraper(AsyncECommerceScraper):
             items = []
 
         if not items:
-            items = [
-                {
-                    "title": "Logitech M185 Wireless Mouse",
-                    "price": 799.0,
-                    "currency": "INR",
-                    "source": "Amazon",
-                    "url": "amazon://demo/logitech-m185",
-                },
-                {
-                    "title": "HP X1000 Wired Mouse",
-                    "price": 399.0,
-                    "currency": "INR",
-                    "source": "Amazon",
-                    "url": "amazon://demo/hp-x1000",
-                },
-            ]
+            ql = (query or "").lower()
+            if "laptop" in ql or "notebook" in ql:
+                items = [
+                    {
+                        "title": "HP 15s 12th Gen i5 Laptop (16GB/512GB SSD)",
+                        "price": 52990.0,
+                        "currency": "INR",
+                        "source": "Amazon",
+                        "url": "amazon://demo/hp-15s-i5",
+                    },
+                    {
+                        "title": "Lenovo IdeaPad Slim 3 Ryzen 5 5500U (8GB/512GB)",
+                        "price": 42990.0,
+                        "currency": "INR",
+                        "source": "Amazon",
+                        "url": "amazon://demo/lenovo-ideapad-slim-3",
+                    },
+                    {
+                        "title": "ASUS VivoBook 15 i3 12th Gen (8GB/512GB)",
+                        "price": 38990.0,
+                        "currency": "INR",
+                        "source": "Amazon",
+                        "url": "amazon://demo/asus-vivobook-15",
+                    },
+                ]
+            else:
+                items = [
+                    {
+                        "title": "Logitech M185 Wireless Mouse",
+                        "price": 799.0,
+                        "currency": "INR",
+                        "source": "Amazon",
+                        "url": "amazon://demo/logitech-m185",
+                    },
+                    {
+                        "title": "HP X1000 Wired Mouse",
+                        "price": 399.0,
+                        "currency": "INR",
+                        "source": "Amazon",
+                        "url": "amazon://demo/hp-x1000",
+                    },
+                ]
 
         products: List[Dict[str, Any]] = []
         for item in items:

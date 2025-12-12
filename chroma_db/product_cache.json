@@ -66,5 +66,491 @@
       "timestamp": "2025-12-11T10:50:00.770942",
       "query": "search for mouse gaming and tell"
     }
+  },
+  "so_tell_me_for_mouse": {
+    "documents": [
+      {
+        "title": "Logitech M510 Wireless Mouse",
+        "price": 24.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-logitech-m510",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "Razer DeathAdder Essential Gaming Mouse",
+        "price": 29.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Dell MS116 Wired Optical Mouse",
+        "price": 349.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/dell-ms116",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "HP X1000 Wired Mouse",
+        "price": 399.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/hp-x1000",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Logitech M221 Wireless Mouse",
+        "price": 749.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/logitech-m221",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "Logitech M185 Wireless Mouse",
+        "price": 799.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/logitech-m185",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      }
+    ],
+    "metadata": {
+      "timestamp": "2025-12-11T13:15:55.238809",
+      "query": "so tell me for mouse"
+    }
+  },
+  "work_on_my_mouse_finding": {
+    "documents": [
+      {
+        "title": "Logitech M510 Wireless Mouse",
+        "price": 24.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-logitech-m510",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "Razer DeathAdder Essential Gaming Mouse",
+        "price": 29.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Dell MS116 Wired Optical Mouse",
+        "price": 349.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/dell-ms116",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "HP X1000 Wired Mouse",
+        "price": 399.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/hp-x1000",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Logitech M221 Wireless Mouse",
+        "price": 749.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/logitech-m221",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "Logitech M185 Wireless Mouse",
+        "price": 799.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/logitech-m185",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      }
+    ],
+    "metadata": {
+      "timestamp": "2025-12-11T13:25:07.030625",
+      "query": "work on my mouse finding"
+    }
+  },
+  "laptop_rtx": {
+    "documents": [
+      {
+        "title": "Logitech M510 Wireless Mouse",
+        "price": 24.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-logitech-m510",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "Razer DeathAdder Essential Gaming Mouse",
+        "price": 29.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Dell MS116 Wired Optical Mouse",
+        "price": 349.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/dell-ms116",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "HP X1000 Wired Mouse",
+        "price": 399.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/hp-x1000",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Logitech M221 Wireless Mouse",
+        "price": 749.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/logitech-m221",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "Logitech M185 Wireless Mouse",
+        "price": 799.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/logitech-m185",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      }
+    ],
+    "metadata": {
+      "timestamp": "2025-12-11T21:10:39.303333",
+      "query": "laptop rtx"
+    }
+  },
+  "laptop_with_rtx_4060_under_1_lakh": {
+    "documents": [
+      {
+        "title": "Logitech M510 Wireless Mouse",
+        "price": 24.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-logitech-m510",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "Razer DeathAdder Essential Gaming Mouse",
+        "price": 29.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Dell MS116 Wired Optical Mouse",
+        "price": 349.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/dell-ms116",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "HP X1000 Wired Mouse",
+        "price": 399.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/hp-x1000",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Logitech M221 Wireless Mouse",
+        "price": 749.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/logitech-m221",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "Logitech M185 Wireless Mouse",
+        "price": 799.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/logitech-m185",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      }
+    ],
+    "metadata": {
+      "timestamp": "2025-12-11T21:14:09.399156",
+      "query": "laptop with rtx 4060 under 1 lakh"
+    }
+  },
+  "recommend_a_gaming_laptop_under_60000_inr": {
+    "documents": [
+      {
+        "title": "Logitech M510 Wireless Mouse",
+        "price": 24.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-logitech-m510",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "Razer DeathAdder Essential Gaming Mouse",
+        "price": 29.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Dell MS116 Wired Optical Mouse",
+        "price": 349.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/dell-ms116",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "HP X1000 Wired Mouse",
+        "price": 399.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/hp-x1000",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Logitech M221 Wireless Mouse",
+        "price": 749.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/logitech-m221",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "Logitech M185 Wireless Mouse",
+        "price": 799.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/logitech-m185",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      }
+    ],
+    "metadata": {
+      "timestamp": "2025-12-11T21:18:50.597138",
+      "query": "recommend a gaming laptop under 60000 INR"
+    }
+  },
+  "give_me_laptops_to_purchase": {
+    "documents": [
+      {
+        "title": "Logitech M510 Wireless Mouse",
+        "price": 24.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-logitech-m510",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "Razer DeathAdder Essential Gaming Mouse",
+        "price": 29.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-razer-deathadder",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Dell MS116 Wired Optical Mouse",
+        "price": 349.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/dell-ms116",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "HP X1000 Wired Mouse",
+        "price": 399.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/hp-x1000",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Logitech M221 Wireless Mouse",
+        "price": 749.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/logitech-m221",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "Logitech M185 Wireless Mouse",
+        "price": 799.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/logitech-m185",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      }
+    ],
+    "metadata": {
+      "timestamp": "2025-12-12T14:18:08.881740",
+      "query": "give me laptops to purchase"
+    }
+  },
+  "tell_me_best_laptop_under_60000": {
+    "documents": [
+      {
+        "title": "Lenovo ThinkPad T480 (Refurbished)",
+        "price": 279.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-refurb-thinkpad-t480",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "Dell Latitude 7490 (Used)",
+        "price": 329.99,
+        "currency": "USD",
+        "source": "eBay",
+        "url": "https://www.ebay.com/itm/demo-used-latitude-7490",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u2705 Good Deal vs peers (low percentile)"
+      },
+      {
+        "title": "HP 14s 11th Gen i3 (8GB/512GB SSD)",
+        "price": 32990.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/hp-14s-i3",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "Acer Aspire 3 Ryzen 5 (8GB/512GB SSD)",
+        "price": 35990.0,
+        "currency": "INR",
+        "source": "Flipkart",
+        "url": "flipkart://demo/acer-aspire-3-r5",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u27a1\ufe0f Fair Price vs peers"
+      },
+      {
+        "title": "ASUS VivoBook 15 i3 12th Gen (8GB/512GB)",
+        "price": 38990.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/asus-vivobook-15",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "Lenovo IdeaPad Slim 3 Ryzen 5 5500U (8GB/512GB)",
+        "price": 42990.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/lenovo-ideapad-slim-3",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      },
+      {
+        "title": "HP 15s 12th Gen i5 Laptop (16GB/512GB SSD)",
+        "price": 52990.0,
+        "currency": "INR",
+        "source": "Amazon",
+        "url": "amazon://demo/hp-15s-i5",
+        "image_url": "",
+        "score": 1.0,
+        "trend": "\u23f3 High Price vs peers (consider waiting)"
+      }
+    ],
+    "metadata": {
+      "timestamp": "2025-12-12T15:05:07.832927",
+      "query": "tell me best laptop under 60000"
+    }
   }
 }

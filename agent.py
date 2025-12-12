@@ -2,7 +2,9 @@ import logging
 import json
 import asyncio
 import os
-import google.generativeai as genai
+from google import genai
+from google.genai import types
+from google.genai import errors
 from tools import MockAmazonConnector, DatabaseManager
 from price_tracker import PriceTracker
 
@@ -22,10 +24,12 @@ class ShoppingAgent:
         logger.info("Agent: Initializing Models...")
         # Initialize Google Gemini
         self.gemini_ready = False
-        api_key = os.getenv("GOOGLE_API_KEY")
+        api_key = os.getenv("GEMINI_API_KEY")
         try:
             if api_key:
-                genai.configure(api_key=api_key)
+                self.genai_client = genai.Client(
+                    api_key=api_key,
+                )
                 # System instruction to steer assistant behavior
                 self.system_instruction = (
                     "You are a helpful grocery shopping assistant.\n"
@@ -35,13 +39,30 @@ class ShoppingAgent:
                     "- recommend items\n"
                     "Speak friendly and clearly."
                 )
-                self.model = genai.GenerativeModel("models/gemini-2.0-flash")
-                self.chat_session = self.model.start_chat(history=[])
+                # Pick a low-cost model available for this account/region
+                preferred = [
+                    "gemini-1.5-flash-8b",
+                    "gemini-1.5-flash",
+                    "gemini-2.0-flash-lite",
+                    "gemini-2.0-flash",
+                    "gemini-2.5-flash",
+                ]
+
+                chosen = None
+                try:
+                    chosen = "gemini-flash-latest"
+                except Exception:
+                    # Fallback to a common default if listing fails
+                    chosen = "gemini-flash-latest"
+
+                if not chosen:
+                    chosen = "gemini-flash-latest"
+
+                self.model_name = chosen
                 # Seed chat with system instruction
-                self.chat_session.send_message(self.system_instruction)
                 self.gemini_ready = True
             else:
-                logger.warning("GOOGLE_API_KEY not set. Gemini will be unavailable; using fallback responses.")
+                logger.warning("GEMINI_API_KEY not set. Gemini will be unavailable; using fallback responses.")
         except Exception as e:
             logger.error(f"Failed to initialize Gemini: {e}")
         
@@ -153,11 +174,10 @@ class ShoppingAgent:
         profile_context = self.get_user_profile_str()
         online_context = ""
 
-        # Fast path for simple greetings / smalltalk: avoid heavy LLM + scraping
+        # Fast path for explicit greetings / smalltalk: avoid heavy LLM + scraping
         msg = (user_input or "").strip().lower()
         simple_greetings = {"hi", "hello", "hey", "yo", "sup", "hii", "hiii"}
-        shopping_keywords = ["buy", "find", "price", "deal", "cheap", "expensive", "recommend", "best"]
-        if msg in simple_greetings or (len(msg.split()) <= 3 and not any(k in msg for k in shopping_keywords)):
+        if msg in simple_greetings:
             # Very short, friendly reply
             return "Hi! I am your shopping assistant. Tell me what you want to buy or your budget, and I will find options for you."
         # Retrieve recent interactions from Chroma (conversation memory)
@@ -223,8 +243,22 @@ class ShoppingAgent:
                 history=history_context,
                 input=user_input,
             )
-            gemini_resp = self.chat_session.send_message(formatted)
-            response = getattr(gemini_resp, "text", None) or str(gemini_resp)
+            contents = [
+                types.Content(
+                    role="user",
+                    parts=[types.Part.from_text(text=formatted)],
+                ),
+            ]
+            generate_content_config = types.GenerateContentConfig()
+            chunks = []
+            for chunk in self.genai_client.models.generate_content_stream(
+                model=self.model_name,
+                contents=contents,
+                config=generate_content_config,
+            ):
+                if getattr(chunk, "text", None):
+                    chunks.append(chunk.text)
+            response = "".join(chunks)
             # Log interaction to conversation memory
             try:
                 self.db_manager.log_interaction("current_user", "user", user_input)

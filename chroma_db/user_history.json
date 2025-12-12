@@ -12,5 +12,131 @@
     "role": "assistant",
     "text": "[AUTO RESPONSE - LLM unavailable]\nBased on your profile and live market data:\n\nUSER PROFILE:\nUser: Anish\n- Budget: Medium ($50 - $200)\n- Purpose: General Use\n- Loves: Current Recommendation\n- Recent Buys:\n  * Sony WH-1000XM5 Noise Cancelling Headphones (348.0)\n  * Kindle Paperwhite (16 GB) (149.99)\n  * Gaming Mouse (0.0)\n\n\nMARKET DATA:\nLIVE MARKET DATA:\n- [eBay] Logitech M510 Wireless Mouse - 24.99 USD\n  (\u2705 Good Deal vs peers (low percentile)) [Link: https://www.ebay.com/itm/demo-logitech-m510]\n- [eBay] Razer DeathAdder Essential Gaming Mouse - 29.99 USD\n  (\u27a1\ufe0f Fair Price vs peers) [Link: https://www.ebay.com/itm/demo-razer-deathadder]\n- [Flipkart] Dell MS116 Wired Optical Mouse - 349.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: flipkart://demo/dell-ms116]\n- [Amazon] HP X1000 Wired Mouse - 399.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: amazon://demo/hp-x1000]\n- [Flipkart] Logitech M221 Wireless Mouse - 749.0 INR\n  (\u23f3 High Price vs peers (consider waiting)) [Link: flipkart://demo/logitech-m221]\n",
     "ts": "2025-12-11T05:20:00.788645"
+  },
+  {
+    "id": "current_user:91145dd73b01445cb4fea1fe1127be50",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "so tell me for mouse",
+    "ts": "2025-12-11T07:45:55.241679"
+  },
+  {
+    "id": "current_user:7fc725066c4945a39b39a22f468814e9",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "[AUTO RESPONSE - LLM unavailable]\nBased on your profile and live market data:\n\nUSER PROFILE:\nUser: Anish\n- Budget: Medium ($50 - $200)\n- Purpose: General Use\n- Loves: Current Recommendation\n- Recent Buys:\n  * Sony WH-1000XM5 Noise Cancelling Headphones (348.0)\n  * Kindle Paperwhite (16 GB) (149.99)\n  * Gaming Mouse (0.0)\n\n\nMARKET DATA:\nLIVE MARKET DATA:\n- [eBay] Logitech M510 Wireless Mouse - 24.99 USD\n  (\u2705 Good Deal vs peers (low percentile)) [Link: https://www.ebay.com/itm/demo-logitech-m510]\n- [eBay] Razer DeathAdder Essential Gaming Mouse - 29.99 USD\n  (\u27a1\ufe0f Fair Price vs peers) [Link: https://www.ebay.com/itm/demo-razer-deathadder]\n- [Flipkart] Dell MS116 Wired Optical Mouse - 349.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: flipkart://demo/dell-ms116]\n- [Amazon] HP X1000 Wired Mouse - 399.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: amazon://demo/hp-x1000]\n- [Flipkart] Logitech M221 Wireless Mouse - 749.0 INR\n  (\u23f3 High Price vs peers (consider waiting)) [Link: flipkart://demo/logitech-m221]\n",
+    "ts": "2025-12-11T07:45:55.251191"
+  },
+  {
+    "id": "current_user:b6c52209f35a4217b6cd86be6c707542",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "work on my mouse finding",
+    "ts": "2025-12-11T07:55:15.562109"
+  },
+  {
+    "id": "current_user:83027e3bed574478883ba7c8a8c3e857",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "Here are some mouse options based on your preferences and current deals:\n\n*   **Razer DeathAdder Essential Gaming Mouse (eBay):** This is a strong choice if you're looking for a gaming mouse, available at a fair price of $29.99 USD.\n*   **Logitech M510 Wireless Mouse (eBay):** For everyday general use, this wireless mouse is a great deal at $24.99 USD.",
+    "ts": "2025-12-11T07:55:15.586767"
+  },
+  {
+    "id": "current_user:ead121868d6c406ba7643288fbad41df",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "laptop rtx",
+    "ts": "2025-12-11T15:40:41.909788"
+  },
+  {
+    "id": "current_user:fd4ad5de183240f5a82c0374d5fffff0",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "I couldn't find any laptops with RTX graphics in the current market data. Please try a different search or let me know if you have other items in mind!",
+    "ts": "2025-12-11T15:40:41.919930"
+  },
+  {
+    "id": "current_user:c683bb0b62ec40988916a1e9b5bf5e8c",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "laptop with rtx 4060 under 1 lakh",
+    "ts": "2025-12-11T15:44:24.077863"
+  },
+  {
+    "id": "current_user:7296597f29a24af592a6e8d33148ba9a",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "[AUTO RESPONSE - LLM unavailable]\nBased on your profile and live market data:\n\nUSER PROFILE:\nUser: Anish\n- Budget: Medium ($50 - $200)\n- Purpose: General Use\n- Loves: Current Recommendation\n- Recent Buys:\n  * Sony WH-1000XM5 Noise Cancelling Headphones (348.0)\n  * Kindle Paperwhite (16 GB) (149.99)\n  * Gaming Mouse (0.0)\n\n\nMARKET DATA:\nLIVE MARKET DATA:\n- [eBay] Logitech M510 Wireless Mouse - 24.99 USD\n  (\u2705 Good Deal vs peers (low percentile)) [Link: https://www.ebay.com/itm/demo-logitech-m510]\n- [eBay] Razer DeathAdder Essential Gaming Mouse - 29.99 USD\n  (\u27a1\ufe0f Fair Price vs peers) [Link: https://www.ebay.com/itm/demo-razer-deathadder]\n- [Flipkart] Dell MS116 Wired Optical Mouse - 349.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: flipkart://demo/dell-ms116]\n- [Amazon] HP X1000 Wired Mouse - 399.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: amazon://demo/hp-x1000]\n- [Flipkart] Logitech M221 Wireless Mouse - 749.0 INR\n  (\u23f3 High Price vs peers (consider waiting)) [Link: flipkart://demo/logitech-m221]\n",
+    "ts": "2025-12-11T15:44:24.101091"
+  },
+  {
+    "id": "current_user:9713605d739849b2bb539d7a90cbc534",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "recommend a gaming laptop under 60000 INR",
+    "ts": "2025-12-11T15:48:50.599114"
+  },
+  {
+    "id": "current_user:ed026866017b47feae090f2448b5f975",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "[AUTO RESPONSE - LLM unavailable]\nBased on your profile and live market data:\n\nUSER PROFILE:\nUser: Anish\n- Budget: Medium ($50 - $200)\n- Purpose: General Use\n- Loves: Current Recommendation\n- Recent Buys:\n  * Sony WH-1000XM5 Noise Cancelling Headphones (348.0)\n  * Kindle Paperwhite (16 GB) (149.99)\n  * Gaming Mouse (0.0)\n\n\nMARKET DATA:\nLIVE MARKET DATA:\n- [eBay] Logitech M510 Wireless Mouse - 24.99 USD\n  (\u2705 Good Deal vs peers (low percentile)) [Link: https://www.ebay.com/itm/demo-logitech-m510]\n- [eBay] Razer DeathAdder Essential Gaming Mouse - 29.99 USD\n  (\u27a1\ufe0f Fair Price vs peers) [Link: https://www.ebay.com/itm/demo-razer-deathadder]\n- [Flipkart] Dell MS116 Wired Optical Mouse - 349.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: flipkart://demo/dell-ms116]\n- [Amazon] HP X1000 Wired Mouse - 399.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: amazon://demo/hp-x1000]\n- [Flipkart] Logitech M221 Wireless Mouse - 749.0 INR\n  (\u23f3 High Price vs peers (consider waiting)) [Link: flipkart://demo/logitech-m221]\n",
+    "ts": "2025-12-11T15:48:50.620277"
+  },
+  {
+    "id": "current_user:ed016ea5f77c4b7a8ad4d34a9ebe9987",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "recommend a gaming laptop under 60000 INR",
+    "ts": "2025-12-11T16:09:14.193731"
+  },
+  {
+    "id": "current_user:7b65b06640104700b300b9484ab32044",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "[AUTO RESPONSE - LLM unavailable]\nBased on your profile and live market data:\n\nUSER PROFILE:\nUser: Anish\n- Budget: Medium ($50 - $200)\n- Purpose: General Use\n- Loves: Current Recommendation\n- Recent Buys:\n  * Sony WH-1000XM5 Noise Cancelling Headphones (348.0)\n  * Kindle Paperwhite (16 GB) (149.99)\n  * Gaming Mouse (0.0)\n\n\nMARKET DATA:\nLIVE MARKET DATA:\n- [eBay] Logitech M510 Wireless Mouse - 24.99 USD\n  (\u2705 Good Deal vs peers (low percentile)) [Link: https://www.ebay.com/itm/demo-logitech-m510]\n- [eBay] Razer DeathAdder Essential Gaming Mouse - 29.99 USD\n  (\u27a1\ufe0f Fair Price vs peers) [Link: https://www.ebay.com/itm/demo-razer-deathadder]\n- [Flipkart] Dell MS116 Wired Optical Mouse - 349.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: flipkart://demo/dell-ms116]\n- [Amazon] HP X1000 Wired Mouse - 399.0 INR\n  (\u27a1\ufe0f Fair Price vs peers) [Link: amazon://demo/hp-x1000]\n- [Flipkart] Logitech M221 Wireless Mouse - 749.0 INR\n  (\u23f3 High Price vs peers (consider waiting)) [Link: flipkart://demo/logitech-m221]\n- [Amazon] Logitech M185 Wireless Mouse - 799.0 INR\n  (\u23f3 High Price vs peers (consider waiting)) [Link: amazon://demo/logitech-m185]\n",
+    "ts": "2025-12-11T16:09:14.213228"
+  },
+  {
+    "id": "current_user:8de85fe7a3824537992d57427f33b46c",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "ok",
+    "ts": "2025-12-11T16:09:27.622487"
+  },
+  {
+    "id": "current_user:0ebce645b17243368221f1dd391d29f9",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "[AUTO RESPONSE - LLM unavailable]\nBased on your profile and live market data:\n\nUSER PROFILE:\nUser: Anish\n- Budget: Medium ($50 - $200)\n- Purpose: General Use\n- Loves: Current Recommendation\n- Recent Buys:\n  * Sony WH-1000XM5 Noise Cancelling Headphones (348.0)\n  * Kindle Paperwhite (16 GB) (149.99)\n  * Gaming Mouse (0.0)\n\n\nMARKET DATA:\nNo live results found.",
+    "ts": "2025-12-11T16:09:27.641355"
+  },
+  {
+    "id": "current_user:56053533cbaa4b06a1d218197f42c298",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "give me laptops to purchase",
+    "ts": "2025-12-12T08:48:15.290402"
+  },
+  {
+    "id": "current_user:9797211271034efcbf09a21723aaa215",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "I cannot provide specific laptop recommendations, as the current live market data feed does not contain laptops. Furthermore, your defined budget ($50\u2013$200) is too low for a new, general-purpose laptop.\n\nHowever, based on available inventory and your recent interest in a Gaming Mouse, here are current accessory deals:\n\n*   **Logitech M510 Wireless Mouse:** This is a strong general-use option and currently a **Good Deal** at $24.99 on eBay. [Link: https://www.ebay.com/itm/demo-logitech-m510]\n*   **Razer DeathAdder Essential Gaming Mouse:** A reliable entry-level gaming mouse available for $29.99 on eBay at a Fair Price. [Link: https://www.ebay.com/itm/demo-razer-deathadder]\n*   **Dell MS116 Wired Optical Mouse:** This is the lowest-cost utility option available at 349.0 INR on Flipkart. [Link: flipkart://demo/dell-ms116]\n\n*(Note: Avoid the Logitech M221 and M185, as current prices are marked as High Price compared to peers.)*",
+    "ts": "2025-12-12T08:48:15.303194"
+  },
+  {
+    "id": "current_user:14d7740c4b6c41bbb9cdcac078584dc7",
+    "user_id": "current_user",
+    "role": "user",
+    "text": "tell me best laptop under 60000",
+    "ts": "2025-12-12T09:35:15.360174"
+  },
+  {
+    "id": "current_user:d6eb0c8944af4982ab44cd6ef12d6f32",
+    "user_id": "current_user",
+    "role": "assistant",
+    "text": "The market data does not currently show any high-performance gaming laptops near 60,000 INR. However, based on availability, here are the best laptop options currently priced well under your limit:\n\n*   **Lenovo ThinkPad T480 (Refurbished):** This is the top value option. It is available for $279.99 on eBay and is marked as a strong **Good Deal** vs. peers.\n*   **Acer Aspire 3 Ryzen 5:** This machine offers the best performance among new low-to-mid-range options (Ryzen 5/8GB/512GB SSD). It is available at a **Fair Price** of 35,990.0 INR on Flipkart.\n*   **HP 14s 11th Gen i3:** A solid new general-purpose choice at a **Fair Price**. Get the 8GB/512GB SSD configuration for 32,990.0 INR on Flipkart.\n\n**Price Trend Alert:** Avoid the ASUS VivoBook 15 right now; it is currently selling at a **High Price** compared to similar competitors (38,990.0 INR).",
+    "ts": "2025-12-12T09:35:15.370925"
   }
 ]
