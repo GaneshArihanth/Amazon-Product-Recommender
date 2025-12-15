@@ -10,7 +10,7 @@ This system leverages the latest in **AI-powered natural language processing** t
 
 - **Personalized Recommendations**: Users receive product suggestions that are most relevant to their queries, reducing the time spent on product research.
   
-- **Natural Interaction**: The system allows users to interact in a conversational manner, making it easier to explore product details, compare items, and discover new options without needing to browse through endless product listings.
+- **Natural Interaction**: The system allows users to interact conversationally, making it easier to explore product details, compare items, and discover new options without needing to browse through endless product listings.
 
 - **Domain-Specific Precision**: By focusing on Amazon products, the system is finely tuned to recommend items within that marketplace, ensuring that recommendations are accurate and specific to user needs.
 
