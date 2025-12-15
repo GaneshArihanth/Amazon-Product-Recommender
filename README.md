@@ -1,6 +1,6 @@
 # Amazon Product Recommender
 
-An end‑to‑end AI‑powered recommendation and price‑tracking system for Amazon products.  
+This is an end-to-end AI-powered recommendation and price-tracking system for Amazon products.  
 This project combines web scraping, retrieval‑augmented generation (RAG), and a lightweight web UI to help users:
 
 - Discover relevant products conversationally
@@ -616,5 +616,6 @@ This project is intentionally modular, allowing multiple extensions:
 
 Unless otherwise specified in the repository, this project is provided under an open‑source license.  
 Please check the `LICENSE` file (or repository settings) for the precise terms of use.
+
 
 ---
